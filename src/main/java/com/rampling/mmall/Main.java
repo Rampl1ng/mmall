@@ -55,7 +55,7 @@ public class Main {
         strategyConfig.setNaming(NamingStrategy.underline_to_camel);
         strategyConfig.setColumnNaming(NamingStrategy.underline_to_camel);
 
-        List<TableFill> list = new ArrayList<>();
+        List<TableFill> list = new ArrayList<>(); // 表填充字段
         TableFill tableFill1 = new TableFill("create_time", FieldFill.INSERT);
         TableFill tableFill2 = new TableFill("update_time", FieldFill.INSERT_UPDATE);
         list.add(tableFill1);
