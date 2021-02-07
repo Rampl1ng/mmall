@@ -2,6 +2,9 @@ package com.rampling.mmall.service;
 
 import com.rampling.mmall.entity.ProductCategory;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.rampling.mmall.vo.ProductCategoryVO;
+
+import java.util.List;
 
 /**
  * <p>
@@ -12,5 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2021-02-06
  */
 public interface ProductCategoryService extends IService<ProductCategory> {
-
+    List<ProductCategoryVO> getAllProductCategoryVO();
 }

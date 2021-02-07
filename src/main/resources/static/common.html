@@ -178,59 +178,21 @@
                 <div class="nav_t">全部商品分类</div>
                 <div class="leftNav">
                     <ul>
-                        <li>
+                        <li th:each="levelOne:${list}">
                             <div class="fj">
-                                <span class="n_img"></span> <span class="fl" >一级分类1</span>
+                                <span class="n_img"></span> <span class="fl" th:text="${levelOne.name}"></span>
                             </div>
                             <div class="zj">
                                 <div class="zj_l">
-                                    <div class="zj_l_c">
+                                    <div class="zj_l_c" th:each="levelTwo:${levelOne.children}">
                                         <h2>
-                                            <a href="/productList.html">二级分类1</a>
+                                            <a href="/productList.html" th:text="${levelTwo.name}">二级分类1</a>
                                         </h2>
-                                        <a href="/productList.html">三级分类1</a>
-                                        <a href="/productList.html">三级分类1</a>
-                                        <a href="/productList.html">三级分类1</a>
-                                    </div>
-                                    <div class="zj_l_c">
-                                        <h2>
-                                            <a href="/productList.html">二级分类2</a>
-                                        </h2>
-                                        <a href="/productList.html">三级分类2</a>
-                                        <a href="/productList.html">三级分类2</a>
-                                        <a href="/productList.html">三级分类2</a>
+                                        <a href="/productList.html" th:each="levelThree:${levelTwo.children}" th:text="${levelTwo.name}">三级分类1</a>
                                     </div>
                                 </div>
                             </div>
                         </li>
-
-                        <li>
-                            <div class="fj">
-                                <span class="n_img"></span> <span class="fl" >一级分类1</span>
-                            </div>
-                            <div class="zj">
-                                <div class="zj_l">
-                                    <div class="zj_l_c">
-                                        <h2>
-                                            <a href="/productList.html">二级分类1</a>
-                                        </h2>
-                                        <a href="/productList.html">三级分类1</a>
-                                        <a href="/productList.html">三级分类1</a>
-                                        <a href="/productList.html">三级分类1</a>
-                                    </div>
-                                    <div class="zj_l_c">
-                                        <h2>
-                                            <a href="/productList.html">二级分类2</a>
-                                        </h2>
-                                        <a href="/productList.html">三级分类2</a>
-                                        <a href="/productList.html">三级分类2</a>
-                                        <a href="/productList.html">三级分类2</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-
                     </ul>
                 </div>
             </div>
