@@ -27,9 +27,14 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
 
     @Autowired
     private ProductCategoryMapper productCategoryMapper;
+
+    /**
+     * 根据普通实体类获取vo实体类
+     * @return 封装好的商品分类
+     */
     @Override
     public List<ProductCategoryVO> getAllProductCategoryVO() {
-        // 一级分类
+        // 转化普通实体类为VO实体类
         QueryWrapper<ProductCategory> wrapper = new QueryWrapper<>();
         wrapper.eq("type", 1);
         List<ProductCategory> levelOneList = productCategoryMapper.selectList(wrapper);
@@ -42,6 +47,14 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
 //        }
         List<ProductCategoryVO> levelOneVOList = levelOneList.stream()
                 .map(e -> new ProductCategoryVO(e.getId(), e.getName())).collect(Collectors.toList());
+
+        // 获取分类的图像
+        // bug：需要图片的数量支持，且图片与文本内容也不对应。
+        for (int i = 0; i < levelOneVOList.size(); i++) {
+            levelOneVOList.get(i).setBannerImg("/images/banner" + i + ".png");
+            levelOneVOList.get(i).setTopImg("/images/top" + i + ".png");
+        }
+
         for (ProductCategoryVO levelOneVO : levelOneVOList) {
             wrapper = new QueryWrapper<>();
             wrapper.eq("type", 2);

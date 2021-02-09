@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
-    <th:block th:include="common.html :: source"></th:block>
     <script type="text/javascript" src="/js/jquery-1.11.1.min_044d0927.js"></script>
     <script type="text/javascript" src="/js/jquery.bxslider_e88acd1b.js"></script>
+    <th:block th:include="common.html :: source"></th:block>
 </head>
 <body>
 
@@ -43,20 +43,20 @@
     </div>
 
     <!-- center -->
-    <div>
+    <div th:each="productCategory:${list}">
         <div class="content mar_20">
-            <img src="/images/banner0.png" width="1200" />
+            <img th:src="${productCategory.bannerImg}" width="1200" />
         </div>
         <div class="i_t mar_10">
-            <span class="floor_num">笔记本</span> <span class="fl">笔记本</span>
+            <span class="floor_num" th:text="${productCategory.name}"></span>
+            <span class="fl" th:text="${productCategory.name}"></span>
         </div>
         <div class="content">
             <div class="fresh_left">
                 <div class="fre_ban">
                     <div id="imgPlay1" class="imgPlay1">
                         <ul class="imgs" id="actor1">
-                            <li><a href="/productDetail.html"><img src="/images/top0.png" width="211"
-                                                                     /></a></li>
+                            <li><a href="/productDetail.html"><img th:src="${productCategory.topImg}" width="211"/></a></li>
                         </ul>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                             <a href="/productDetail.html">商品</a>
                         </div>
                         <div class="price">
-                            <font>￥<span>206</span></font> &nbsp;
+                            <span>￥<span>206</span></span>
                         </div>
                         <div class="img">
                             <a href="/productDetail.html">
@@ -89,243 +89,6 @@
             </div>
         </div>
     </div>
-
-    <div>
-    <div class="content mar_20">
-        <img src="/images/banner1.png" width="1200" />
-    </div>
-    <div class="i_t mar_10">
-        <span class="floor_num">笔记本</span> <span class="fl">笔记本</span>
-    </div>
-    <div class="content">
-        <div class="fresh_left">
-            <div class="fre_ban">
-                <div id="imgPlay1" class="imgPlay1">
-                    <ul class="imgs" id="actor1">
-                        <li><a href="/productDetail.html"><img src="/images/top1.png" width="211"
-                                                                 /></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="fresh_mid">
-            <ul>
-                <li>
-                    <div class="name">
-                        <a href="/productDetail.html">商品</a>
-                    </div>
-                    <div class="price">
-                        <font>￥<span>206</span></font> &nbsp;
-                    </div>
-                    <div class="img">
-                        <a href="/productDetail.html">
-                            <img src="/images/baby_3.jpg" width="185"
-                                 height="155" />
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="fresh_right">
-            <ul>
-                <li><a href="/productDetail.html"><img src="/images/12.png" height="220"
-                /></a></li>
-                <li><a href="/productDetail.html"><img src="/images/13.png" height="220"
-                                                      style="margin-top: 5px" /></a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-    <div>
-        <div class="content mar_20">
-            <img src="/images/banner2.png" width="1200" />
-        </div>
-        <div class="i_t mar_10">
-            <span class="floor_num">笔记本</span> <span class="fl">笔记本</span>
-        </div>
-        <div class="content">
-            <div class="fresh_left">
-                <div class="fre_ban">
-                    <div id="imgPlay1" class="imgPlay1">
-                        <ul class="imgs" id="actor1">
-                            <li><a href="/productDetail.html"><img src="/images/top2.png" width="211"
-                                                                     /></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="fresh_mid">
-                <ul>
-                    <li>
-                        <div class="name">
-                            <a href="/productDetail.html">商品</a>
-                        </div>
-                        <div class="price">
-                            <font>￥<span>206</span></font> &nbsp;
-                        </div>
-                        <div class="img">
-                            <a href="/productDetail.html">
-                                <img src="/images/baby_3.jpg" width="185"
-                                     height="155" />
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="fresh_right">
-                <ul>
-                    <li><a href="/productDetail.html"><img src="/images/12.png" height="220"
-                    /></a></li>
-                    <li><a href="/productDetail.html"><img src="/images/13.png" height="220"
-                                                          style="margin-top: 5px" /></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <div class="content mar_20">
-            <img src="/images/banner0.png" width="1200" />
-        </div>
-        <div class="i_t mar_10">
-            <span class="floor_num">笔记本</span> <span class="fl">笔记本</span>
-        </div>
-        <div class="content">
-            <div class="fresh_left">
-                <div class="fre_ban">
-                    <div id="imgPlay1" class="imgPlay1">
-                        <ul class="imgs" id="actor1">
-                            <li><a href="/productDetail.html"><img src="/images/top0.png" width="211"
-                            /></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="fresh_mid">
-                <ul>
-                    <li>
-                        <div class="name">
-                            <a href="/productDetail.html">商品</a>
-                        </div>
-                        <div class="price">
-                            <font>￥<span>206</span></font> &nbsp;
-                        </div>
-                        <div class="img">
-                            <a href="/productDetail.html">
-                                <img src="/images/baby_3.jpg" width="185"
-                                     height="155" />
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="fresh_right">
-                <ul>
-                    <li><a href="/productDetail.html"><img src="/images/12.png" height="220"
-                    /></a></li>
-                    <li><a href="/productDetail.html"><img src="/images/13.png" height="220"
-                                                           style="margin-top: 5px" /></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <div class="content mar_20">
-            <img src="/images/banner1.png" width="1200" />
-        </div>
-        <div class="i_t mar_10">
-            <span class="floor_num">笔记本</span> <span class="fl">笔记本</span>
-        </div>
-        <div class="content">
-            <div class="fresh_left">
-                <div class="fre_ban">
-                    <div id="imgPlay1" class="imgPlay1">
-                        <ul class="imgs" id="actor1">
-                            <li><a href="/productDetail.html"><img src="/images/top1.png" width="211"
-                            /></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="fresh_mid">
-                <ul>
-                    <li>
-                        <div class="name">
-                            <a href="/productDetail.html">商品</a>
-                        </div>
-                        <div class="price">
-                            <font>￥<span>206</span></font> &nbsp;
-                        </div>
-                        <div class="img">
-                            <a href="/productDetail.html">
-                                <img src="/images/baby_3.jpg" width="185"
-                                     height="155" />
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="fresh_right">
-                <ul>
-                    <li><a href="/productDetail.html"><img src="/images/12.png" height="220"
-                    /></a></li>
-                    <li><a href="/productDetail.html"><img src="/images/13.png" height="220"
-                                                           style="margin-top: 5px" /></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <div class="content mar_20">
-            <img src="/images/banner2.png" width="1200" />
-        </div>
-        <div class="i_t mar_10">
-            <span class="floor_num">笔记本</span> <span class="fl">笔记本</span>
-        </div>
-        <div class="content">
-            <div class="fresh_left">
-                <div class="fre_ban">
-                    <div id="imgPlay1" class="imgPlay1">
-                        <ul class="imgs" id="actor1">
-                            <li><a href="/productDetail.html"><img src="/images/top2.png" width="211"
-                            /></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="fresh_mid">
-                <ul>
-                    <li>
-                        <div class="name">
-                            <a href="/productDetail.html">商品</a>
-                        </div>
-                        <div class="price">
-                            <font>￥<span>206</span></font> &nbsp;
-                        </div>
-                        <div class="img">
-                            <a href="/productDetail.html">
-                                <img src="/images/baby_3.jpg" width="185"
-                                     height="155" />
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="fresh_right">
-                <ul>
-                    <li><a href="/productDetail.html"><img src="/images/12.png" height="220"
-                    /></a></li>
-                    <li><a href="/productDetail.html"><img src="/images/13.png" height="220"
-                                                           style="margin-top: 5px" /></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- center -->
-
 </div>
 
 <th:block th:include="common.html :: footer"></th:block>
